@@ -28,7 +28,7 @@ resource "aws_instance" "nessus-scanner" {
   iam_instance_profile   = "${aws_iam_instance_profile.nessus-server-profile.name}"
   subnet_id              = "${var.subnet_id}"
   user_data              = "${data.template_file.nessus-user-data.rendered}"
-  instance_size          = "${var.instance_size}"
+  instance_type          = "${var.instance_type}"
 
   root_block_device = {
     volume_type = "gp2"

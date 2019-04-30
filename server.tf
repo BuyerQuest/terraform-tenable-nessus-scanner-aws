@@ -14,7 +14,7 @@ data "template_file" "nessus-user-data" {
 # Find the latest AMI by product code
 data "aws_ami" "nessus-image" {
   most_recent = true
-  owners = ["679593333241"]
+  owners = ["aws-marketplace"]
 
   filter {
     name   = "product-code"

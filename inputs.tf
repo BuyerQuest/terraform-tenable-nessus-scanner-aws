@@ -25,3 +25,9 @@ variable "instance_type" {
   type        = "string"
   default     = "m4.large"
 }
+
+variable "instance_name" {
+  description = "The name of the instance as it appears in the aws instance list"
+  type        = "string"
+  default     = "nesser-scanner"
+}

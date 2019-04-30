@@ -30,6 +30,10 @@ resource "aws_instance" "nessus-scanner" {
   user_data              = "${data.template_file.nessus-user-data.rendered}"
   instance_type          = "${var.instance_type}"
 
+  tags = {
+    Name = "${var.instance_name}"
+  }
+
   root_block_device = {
     volume_type = "gp2"
     volume_size = "50"

@@ -39,3 +39,11 @@ resource "aws_instance" "nessus-scanner" {
     volume_size = "50"
   }
 }
+
+resource "aws_eip" "nessus-scanner-eip" {
+  vpc      = true
+  instance = "${aws_instance.nessus-scanner.id}"
+  tags {
+      Name = "${var.scanner_name}_EIP"
+  }
+}

@@ -14,7 +14,7 @@ Add this module to your terraform project's source code and provide the followin
   - VPC ID
   - Subnet ID
   - (Optional) Instance type, defaults to m4.large
-  - (Optional) Instance name, defaults to nesser-scanner
+  - (Optional) Instance name, defaults to nessus-scanner
 
 #### Example:
 
@@ -27,6 +27,6 @@ module "nessus_scanner" {
   vpc_id              = "vpc-31896b55"
   subnet_id           = "subnet-4204d234"
   instance_type       = "t2.medium"
-  instance_name       = "my-nesser-scanner"
+  instance_name       = "my-nessus-scanner"
 }
 ```

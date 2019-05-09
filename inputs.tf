@@ -29,5 +29,5 @@ variable "instance_type" {
 variable "instance_name" {
   description = "The name of the instance as it appears in the aws instance list"
   type        = "string"
-  default     = "nesser-scanner"
+  default     = "nessus-scanner"
 }

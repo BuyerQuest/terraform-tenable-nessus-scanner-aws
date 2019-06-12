@@ -8,6 +8,8 @@ Terraform modules don't always have the options you need out of the box, and I t
 
 In tenable.io's web UI, grab your linking key from [the **Scans > Scanners** page](https://cloud.tenable.com/app.html#/scans/scanners)
 
+### Inputs
+
 Add this module to your terraform project's source code and provide the following:
   - Tenable Linking Key
   - VPC ID
@@ -15,6 +17,10 @@ Add this module to your terraform project's source code and provide the followin
   - (Optional) Instance type, defaults to m4.large
   - (Optional) Instance name, defaults to nessus-scanner
   - (Optional) Scanner name (a friendly name to show in the Tenable.io UI), defaults to Instance name.
+
+### Outputs
+
+The module creates a security group, and you can access that group's id with the `security_group_id` output. Useful for opening up the AWS firewalls to allow scanning.
 
 #### Example:
 

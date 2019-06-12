@@ -1,7 +1,7 @@
 ## Create the Nessus Security Groups ##
 
 resource "aws_security_group" "nessus-security-group" {
-  name        = "nessus-server-security"
+  name        = "${var.instance_name}-security"
   description = "Security group for the Nessus VM Scanner Server instance (Deny all inbound)"
   vpc_id      = "${var.vpc_id}"
 }

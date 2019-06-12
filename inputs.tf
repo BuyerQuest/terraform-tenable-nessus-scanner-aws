@@ -1,8 +1,9 @@
 ## Provision a Nessus Scanner ##
 
 variable "scanner_name" {
-  description = "The name of your Nessus scanner as it will appear in the Tenable.io web UI"
+  description = "The name of your Nessus scanner as it will appear in the Tenable.io web UI. Defaults to the AWS instance name."
   type        = "string"
+  default     = "unset_scanner_name"
 }
 
 variable "tenable_linking_key" {

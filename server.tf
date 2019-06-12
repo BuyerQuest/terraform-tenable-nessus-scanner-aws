@@ -5,7 +5,7 @@ data "template_file" "nessus-user-data" {
   template = "${file("${path.module}/templates/user-data.json.tpl")}"
 
   vars {
-    name     = "${var.scanner_name}"
+    name     = "${var.scanner_name == "unset_scanner_name" ? var.instance_name : var.scanner_name}"
     key      = "${var.tenable_linking_key}"
     iam_role = "${aws_iam_role.nessus-server-role.name}"
   }

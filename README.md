@@ -9,11 +9,12 @@ Terraform modules don't always have the options you need out of the box, and I t
 In tenable.io's web UI, grab your linking key from [the **Scans > Scanners** page](https://cloud.tenable.com/app.html#/scans/scanners)
 
 Add this module to your terraform project's source code and provide the following:
-  - Scanner name (Friendly name to show in the Tenable.io UI)
   - Tenable Linking Key
   - VPC ID
   - Subnet ID
   - (Optional) Instance type, defaults to m4.large
+  - (Optional) Instance name, defaults to nessus-scanner
+  - (Optional) Scanner name (a friendly name to show in the Tenable.io UI), defaults to Instance name.
 
 #### Example:
 
@@ -26,5 +27,6 @@ module "nessus_scanner" {
   vpc_id              = "vpc-31896b55"
   subnet_id           = "subnet-4204d234"
   instance_type       = "t2.medium"
+  instance_name       = "my-nessus-scanner"
 }
 ```

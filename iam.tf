@@ -32,4 +32,3 @@ resource "aws_iam_instance_profile" "nessus-server-profile" {
   name = "${var.instance_name}-profile"
   role = aws_iam_role.nessus-server-role.name
 }
-

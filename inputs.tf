@@ -32,3 +32,9 @@ variable "instance_name" {
   type        = "string"
   default     = "nessus-scanner"
 }
+
+variable "use_eip" {
+  description = "Whether or not to use an Elastic IP address with the Nessus scanner. Defaults to true because the documentation says it is required."
+  type        = "string"
+  default     = "true"
+}

@@ -41,9 +41,11 @@ resource "aws_instance" "nessus-scanner" {
 }
 
 resource "aws_eip" "nessus-scanner-eip" {
+  count    = "${var.use_eip == "true" ? 1 : 0}"
   vpc      = true
   instance = "${aws_instance.nessus-scanner.id}"
+
   tags {
-      Name = "${var.scanner_name}_EIP"
+    Name = "${var.instance_name}_EIP"
   }
 }

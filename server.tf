@@ -5,7 +5,7 @@ data "template_file" "nessus-user-data" {
   template = file("${path.module}/templates/user-data.json.tpl")
 
   vars = {
-    name     = var.scanner_name == "unset_scanner_name" ? var.instance_name : var.scanner_name
+    name     = var.scanner_name == null ? local.instance_tags["Name"] : var.scanner_name
     key      = var.tenable_linking_key
     iam_role = aws_iam_role.nessus-server-role.name
   }
@@ -31,9 +31,7 @@ resource "aws_instance" "nessus-scanner" {
   user_data              = data.template_file.nessus-user-data.rendered
   instance_type          = var.instance_type
 
-  tags = {
-    Name = var.instance_name
-  }
+  tags = local.instance_tags
 
   root_block_device {
     volume_type = "gp2"
@@ -47,6 +45,6 @@ resource "aws_eip" "nessus-scanner-eip" {
   instance = aws_instance.nessus-scanner.id
 
   tags = {
-    Name = "${var.instance_name}_EIP"
+    Name = "${local.instance_tags["Name"]}_EIP"
   }
 }

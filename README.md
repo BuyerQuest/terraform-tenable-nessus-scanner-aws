@@ -1,3 +1,9 @@
+# Legacy Terraform Module
+
+For continuing support of Terraform 0.11, use this branch. Anyone on 0.12 or newer should switch to `master`.
+
+----
+
 # Terraform Module for Tenable.io's Nessus Scanner on AWS
 
 This module will set up the latest release of [Tenable.io's preauthorized Nessus scanner from the AWS marketplace](https://aws.amazon.com/marketplace/pp/B01LXCD58S?qid=1532453752682). It will also update your machine if you run it again after the release of a newer version of the AMI.

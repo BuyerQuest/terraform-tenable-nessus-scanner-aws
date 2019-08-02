@@ -1,7 +1,7 @@
 ## Nessus IAM role ##
 
 resource "aws_iam_role" "nessus-server-role" {
-  name               = "${var.instance_name}-role"
+  name               = "${local.instance_tags["Name"]}-role"
   assume_role_policy = data.aws_iam_policy_document.nessus-instance-assume-role-policy.json
 }
 
@@ -29,6 +29,6 @@ resource "aws_iam_role_policy_attachment" "nessus-ec2-read-only" {
 
 # Assign the role to the instance profile
 resource "aws_iam_instance_profile" "nessus-server-profile" {
-  name = "${var.instance_name}-profile"
+  name = "${local.instance_tags["Name"]}-profile"
   role = aws_iam_role.nessus-server-role.name
 }

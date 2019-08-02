@@ -23,6 +23,7 @@ Add this module to your terraform project's source code and provide the followin
   - (Optional) Instance type, defaults to m4.large
   - (Optional) Instance name, defaults to nessus-scanner
   - (Optional) Scanner name (a friendly name to show in the Tenable.io UI), defaults to Instance name.
+  - (Optional) A map of tags to apply to the instance
 
 ### Outputs
 
@@ -40,5 +41,10 @@ module "nessus_scanner" {
   subnet_id           = "subnet-4204d234"
   instance_type       = "t2.medium"
   instance_name       = "my-nessus-scanner"
+
+  instance_tags = {
+    Role        = "security-scanner"
+    Projects    = "tenable"
+  }
 }
 ```

@@ -3,7 +3,7 @@
 resource "aws_security_group" "nessus-security-group" {
   name        = "${var.instance_name}-security"
   description = "Security group for the Nessus VM Scanner Server instance (Deny all inbound)"
-  vpc_id      = "${var.vpc_id}"
+  vpc_id      = var.vpc_id
 }
 
 # The documentation for Tenable on AWS recommends a security group with
@@ -17,5 +17,6 @@ resource "aws_security_group_rule" "nessus-allow-outbound" {
   protocol    = "-1"
   cidr_blocks = ["0.0.0.0/0"]
 
-  security_group_id = "${aws_security_group.nessus-security-group.id}"
+  security_group_id = aws_security_group.nessus-security-group.id
 }
+

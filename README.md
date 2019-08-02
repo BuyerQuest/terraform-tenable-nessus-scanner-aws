@@ -4,7 +4,13 @@ This module will set up the latest release of [Tenable.io's preauthorized Nessus
 
 Terraform modules don't always have the options you need out of the box, and I threw this together pretty quickly for use in my environment. However, as long as you can specify a VPC and a subnet, you should be able to use it.
 
-## Usage
+## Versioning
+
+This module supports Terraform 0.12 or later. See the branches list for older versions of Terraform.
+
+To pin a version of this module, [use a ref link](https://www.terraform.io/docs/modules/sources.html#selecting-a-revision) to pin a commit or tag. Tags are the date of a release, nothing fancy.
+
+# Usage
 
 In tenable.io's web UI, grab your linking key from [the **Scans > Scanners** page](https://cloud.tenable.com/app.html#/scans/scanners)
 

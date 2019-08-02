@@ -1,6 +1,6 @@
 # Legacy Terraform Module
 
-For continuing support of Terraform 0.11, use this branch. Anyone on 0.12 or newer should switch to `master`.
+For continuing support of Terraform 0.11, use this branch. Anyone on 0.12 or newer should switch to [master](https://github.com/BuyerQuest/terraform-tenable-nessus-scanner-aws/tree/master).
 
 ----
 

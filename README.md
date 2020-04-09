@@ -20,7 +20,7 @@ Add this module to your terraform project's source code and provide the followin
   - Tenable Linking Key
   - VPC ID
   - Subnet ID
-  - (Optional) Instance type, defaults to m4.large
+  - (Optional) Instance type, defaults to m5.xlarge
   - (Optional) Instance name, defaults to nessus-scanner
   - (Optional) Scanner name (a friendly name to show in the Tenable.io UI), defaults to Instance name.
   - (Optional) A map of tags to apply to the instance
@@ -39,7 +39,7 @@ module "nessus_scanner" {
   tenable_linking_key = "pvwk5qf5bwsuperfakekeypqv3zcovanqnuawebmv23rj9fofsdcul7aaa"
   vpc_id              = "vpc-31896b55"
   subnet_id           = "subnet-4204d234"
-  instance_type       = "t2.medium"
+  instance_type       = "t3.xlarge"
   instance_name       = "my-nessus-scanner"
 
   instance_tags = {

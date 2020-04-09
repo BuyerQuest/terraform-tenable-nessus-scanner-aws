@@ -24,7 +24,7 @@ variable "subnet_id" {
 variable "instance_type" {
   description = "The type of instance, e.g. m3.large, c3.2xlarge, etc. to be spun up"
   type        = string
-  default     = "m4.large"
+  default     = "m5.xlarge"
 }
 
 variable "instance_name" {

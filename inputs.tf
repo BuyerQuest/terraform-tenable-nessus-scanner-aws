@@ -48,9 +48,10 @@ variable "use_eip" {
 ## Process some inputs into a map of tags, then use those instead
 
 locals {
-  instance_tags =  merge(
-    {"Name"="nessus-scanner"},                                        # Default instance name
-    var.instance_tags,                                                # Allow naming with tags
-    var.instance_name == null ? {} : {"Name"="${var.instance_name}"}  # Override with explicit name input
-  )
+  instance_tags = { "Name" = coalesce(
+    var.instance_name,                       # Override with explicit name input
+    lookup(var.instance_tags, "Name", null), # Allow naming with tags
+    "nessus-scanner"                         # Default instance name
+    )
+  }
 }

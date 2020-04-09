@@ -5,7 +5,7 @@ data "template_file" "nessus-user-data" {
   template = file("${path.module}/templates/user-data.json.tpl")
 
   vars = {
-    name     = var.scanner_name == null ? local.instance_tags["Name"] : var.scanner_name
+    name     = coalesce(var.scanner_name, local.instance_tags["Name"])
     key      = var.tenable_linking_key
     iam_role = aws_iam_role.nessus-server-role.name
   }

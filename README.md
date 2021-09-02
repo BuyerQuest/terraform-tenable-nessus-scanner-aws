@@ -6,7 +6,7 @@ Terraform modules don't always have the options you need out of the box, and I t
 
 ## Versioning
 
-This module supports Terraform 0.12 or later. See the branches list for older versions of Terraform.
+This module supports Terraform 0.13 or later. See the branches list for older versions of Terraform.
 
 To pin a version of this module, [use a ref link](https://www.terraform.io/docs/modules/sources.html#selecting-a-revision) to pin a commit or tag. Tags are the date of a release, nothing fancy.
 

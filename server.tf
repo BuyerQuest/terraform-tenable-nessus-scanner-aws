@@ -32,7 +32,7 @@ resource "aws_instance" "nessus-scanner" {
   tags = local.instance_tags
 
   root_block_device {
-    volume_type = "gp2"
+    volume_type = "gp3"
     volume_size = "50"
   }
 }

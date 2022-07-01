@@ -35,7 +35,7 @@ variable "instance_name" {
 
 variable "instance_tags" {
   description = "A map of tags to apply to the instance"
-  type        = map
+  type        = map(any)
   default     = {}
 }
 
@@ -43,6 +43,15 @@ variable "use_eip" {
   description = "Whether or not to use an Elastic IP address with the Nessus scanner. Defaults to true because the documentation says it is required."
   type        = bool
   default     = true
+}
+
+variable "extra_filters" {
+  description = "Additional filters for the AMI search"
+  type = list(object({
+    name   = string
+    values = list(string)
+  }))
+  default = []
 }
 
 ## Process some inputs into a map of tags, then use those instead

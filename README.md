@@ -24,6 +24,7 @@ Add this module to your terraform project's source code and provide the followin
   - (Optional) Instance name, defaults to nessus-scanner
   - (Optional) Scanner name (a friendly name to show in the Tenable.io UI), defaults to Instance name.
   - (Optional) A map of tags to apply to the instance
+  - (Optional) Extra AMI serach filters, defaults to `[]`
 
 ### Outputs
 
@@ -46,5 +47,12 @@ module "nessus_scanner" {
     Role        = "security-scanner"
     Projects    = "tenable"
   }
+
+  extra_filters = [
+    {
+      name = "image-id"
+      values = ["ami-0e2e293e46c009d6f"] # Use a specific AMI instead of the latest available image
+    }
+  ]
 }
 ```

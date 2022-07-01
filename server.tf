@@ -18,6 +18,14 @@ data "aws_ami" "nessus-image" {
     name   = "product-code"
     values = ["4m4uvwtrl5t872c56wb131ttw"]
   }
+
+  dynamic "filter" {
+    for_each = var.extra_filters
+    content {
+      name   = filter.value.name
+      values = filter.value.values
+    }
+  }
 }
 
 # Create the instance

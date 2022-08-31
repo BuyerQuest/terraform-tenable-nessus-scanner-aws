@@ -6,6 +6,7 @@ locals {
     name     = coalesce(var.scanner_name, local.instance_tags["Name"])
     key      = var.tenable_linking_key
     iam_role = aws_iam_role.nessus-server-role.name
+    aws_scanner = true
   }
 }
 

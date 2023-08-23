@@ -17,7 +17,7 @@ data "aws_ami" "nessus-image" {
 
   filter {
     name   = "product-code"
-    values = ["4m4uvwtrl5t872c56wb131ttw"]
+    values = ["8fn69npzmbzcs4blc4583jd0y"]
   }
 
   dynamic "filter" {

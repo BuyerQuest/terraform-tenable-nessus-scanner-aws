@@ -1,6 +1,6 @@
 # Terraform Module for Tenable.io's Nessus Scanner on AWS
 
-This module will set up the latest release of [Tenable.io's preauthorized Nessus scanner from the AWS marketplace](https://aws.amazon.com/marketplace/pp/B01LXCD58S?qid=1532453752682). It will also update your machine if you run it again after the release of a newer version of the AMI.
+This module will set up the latest release of [Tenable.io's Nessus (BYOL) scanner from the AWS marketplace](https://aws.amazon.com/marketplace/pp/prodview-iiuvzhn5kp7oo). It will also update your machine if you run it again after the release of a newer version of the AMI.
 
 Terraform modules don't always have the options you need out of the box, and I threw this together pretty quickly for use in my environment. However, as long as you can specify a VPC and a subnet, you should be able to use it.
 

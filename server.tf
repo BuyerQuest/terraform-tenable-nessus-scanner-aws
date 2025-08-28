@@ -3,9 +3,9 @@
 # Generate cloud-init
 locals {
   user_data_map = {
-    name     = coalesce(var.scanner_name, local.instance_tags["Name"])
-    key      = var.tenable_linking_key
-    iam_role = aws_iam_role.nessus-server-role.name
+    name        = coalesce(var.scanner_name, local.instance_tags["Name"])
+    key         = var.tenable_linking_key
+    iam_role    = aws_iam_role.nessus-server-role.name
     aws_scanner = true
   }
 }
@@ -48,7 +48,7 @@ resource "aws_instance" "nessus-scanner" {
 
 resource "aws_eip" "nessus-scanner-eip" {
   count    = var.use_eip ? 1 : 0
-  vpc      = true
+  domain   = "vpc"
   instance = aws_instance.nessus-scanner.id
 
   tags = {
